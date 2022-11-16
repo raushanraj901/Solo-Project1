@@ -32,7 +32,7 @@ public class AdminController {
 		
 		String saveAdmin = adminService.registerAdmin(admin);
 		
-		return new ResponseEntity<String>(saveAdmin,HttpStatus.CREATED);
+		return new ResponseEntity<String>(saveAdmin,HttpStatus.CREATED); 
 		
 	}
 	@GetMapping("/admin/{id}")
