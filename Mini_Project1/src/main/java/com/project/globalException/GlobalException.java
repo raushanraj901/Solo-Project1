@@ -15,11 +15,13 @@ public class GlobalException {
 	
 	@ExceptionHandler(AdminExecption.class)
 	public ResponseEntity<MyErrorDetails> myCustomerHandller(AdminExecption bnf,WebRequest wr){
+		
 		MyErrorDetails e = new MyErrorDetails();
 		e.setTimeStamp(LocalDateTime.now());
 		e.setMessage(bnf.getMessage());
 		e.setDescription(wr.getDescription(false));
 		return new ResponseEntity<MyErrorDetails>(e,HttpStatus.BAD_REQUEST);
+	
 	}
 	
 	@ExceptionHandler(Exception.class)
